@@ -6,7 +6,6 @@ public class Ride
     private int kmA;
     private Limousine num_limousine;
 
-    //Constructeur pour Ride
     public Ride(String villeD, String villeA, int kmD, int kmA)
     {
         this.villeD = villeD;
@@ -15,7 +14,6 @@ public class Ride
         this.kmA = kmA;
     }
 
-    //méthode toString
     @Override
     public String toString()
     {
