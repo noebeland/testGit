@@ -1,3 +1,5 @@
+package Models;
+
 public class Limousine
 {
     private int immatriculation;

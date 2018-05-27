@@ -1,3 +1,7 @@
+package Models;
+
+import Models.Limousine;
+
 public class Ride
 {
     private String villeD;

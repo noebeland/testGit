@@ -1,11 +1,13 @@
 package Console;
 import java.util.ArrayList;
+import Models.Container;
 
 public class Kernel {
     ArrayList<Command> commandLists = new ArrayList<Command>();
+    private Container container;
 
-    public Kernel() {
-
+    public Kernel(Container container) {
+    this.container = container;
     }
 
     public Kernel register(Command c) {
@@ -20,7 +22,7 @@ public class Kernel {
             command = commandLists.get(i);
 
             if (command.getSignature().equals(str)) {
-                command.handle();
+                command.handle(this.container);
                 return 1;
             }
         }
