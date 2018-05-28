@@ -1,4 +1,5 @@
 import Commands.AddDriver;
+import Commands.AddLimousine;
 import Commands.RentLimousine;
 import Commands.ShowRides;
 import Console.Kernel;
@@ -18,7 +19,8 @@ public class Main {
 //        System.out.println(d1);
 
         Kernel kernel = new Kernel(container);
-        kernel.register(new FindLimousine())
+        kernel.register(new AddLimousine())
+              .register(new FindLimousine())
               .register(new RentLimousine())
               .register(new ShowRides())
               .register(new AddDriver());
