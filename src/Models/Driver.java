@@ -4,47 +4,57 @@ import java.util.ArrayList;
 
 public class Driver
 {
-    private String nom;
-    private String prenom;
-    private int anneeE;
-    private String adresse;
-    ArrayList<Ride> rideArrayList;
+    private String lastName;
+    private String firstName;
+    private int yearHiring;
+    private String address;
+    private ArrayList<Ride> rides;
     private String identification;
 
-    //Constructeur pour driver
-    public Driver(String nom, String prenom,String adresse, int anneeE)
+    public Driver(String lastName, String firstName, String address, int yearHiring)
     {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.adresse = adresse;
-        this.anneeE = anneeE;
-        rideArrayList = new ArrayList<Ride>();
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.address = address;
+        this.yearHiring = yearHiring;
+        rides = new ArrayList<Ride>();
         this.creationID();
     }
 
-    //Accesseur liste des trajets
-    public ArrayList<Ride> getRideArrayList()
-    {
-        return rideArrayList;
+
+    public String getFirstName() {
+        return firstName;
     }
 
-    //méthode permettant de créer l'identification du chauffeur
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getFormattedRides()
+    {
+        String output = "";
+        for(int i = 0; i < rides.size(); i++)
+        {
+            output += rides.get(i) + "\n";
+        }
+
+        return output;
+    }
+
     private void creationID()
     {
         identification = "";
-        identification += nom.charAt(0);
-        identification += nom.charAt(1);
-        identification += nom.charAt(2);
-        identification += prenom.charAt(0);
-        identification += anneeE%100;
+        identification += lastName.charAt(0);
+        identification += lastName.charAt(1);
+        identification += lastName.charAt(2);
+        identification += firstName.charAt(0);
+        identification += yearHiring%100; // bug possible here. ex: 2000 = 0
     }
 
-    //méthode toString
     @Override
     public String toString()
     {
-        String retour = "Nom:" +nom+"\nPrenom:"+prenom+"\nAnnee d'embauche:"+anneeE+"\nIdentification:"+identification+"\nListe des trajets:"+rideArrayList;
-        return retour;
+        return "Nom: " +lastName+"\nPrenom: "+firstName+"\nAnnee d'embauche: "+yearHiring+"\nIdentification: "+identification+"\nListe des trajets: "+rides;
     }
 
 }

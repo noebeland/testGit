@@ -2,25 +2,22 @@ package Models;
 
 public class Limousine
 {
-    private int immatriculation;
-    private int reservoir;
-    private int passager;
-    private String couleur;
+    private int registrationNumber;
+    private int tankCapacity;
+    private int passengerCapacity;
+    private String color;
 
-    //Constructeur pour limousine
-    public Limousine(int immatriculation, int reservoir, int passager, String couleur)
+    public Limousine(int registrationNumber, int tankCapacity, int passengerCapacity, String color)
     {
-        this.immatriculation = immatriculation;
-        this.reservoir = reservoir;
-        this.passager = passager;
-        this.couleur = couleur;
+        this.registrationNumber = registrationNumber;
+        this.tankCapacity = tankCapacity;
+        this.passengerCapacity = passengerCapacity;
+        this.color = color;
     }
 
-    //méthode toString
     @Override
     public String toString()
     {
-        String retour = "Numero d'mmatriculation:" +immatriculation+"\nCapacite du reservoir:"+reservoir+"\nNombre de passage:"+passager+"\nCouleur:"+couleur;
-        return retour;
+        return "Numero d'mmatriculation:" +registrationNumber+"\nCapacite du reservoir:"+tankCapacity+"\nNombre de passage:"+passengerCapacity+"\nCouleur:"+color;
     }
 }

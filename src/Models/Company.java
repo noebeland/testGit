@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class Company
 {
-    ArrayList<Limousine> compagnyArrayList = new ArrayList<Limousine>();
+    ArrayList<Limousine> limousines = new ArrayList<Limousine>();
     ArrayList<Driver> driverArrayList = new ArrayList<Driver>();
 
     public void addLimousine(Limousine l)
     {
-       compagnyArrayList.add(l);
+       limousines.add(l);
     }
 
     public void addDriver(Driver d)
@@ -30,5 +30,18 @@ public class Company
         }
 
         return output;
+    }
+
+    public Driver findDriverByName(String firstName, String lastName) {
+        Driver driver;
+        for(int i = 0; i < driverArrayList.size(); i++)
+        {
+            driver = driverArrayList.get(i);
+            if (driver.getFirstName().equals(firstName) && driver.getLastName().equals(lastName)) {
+                return driver;
+            }
+        }
+
+        return null;
     }
 }

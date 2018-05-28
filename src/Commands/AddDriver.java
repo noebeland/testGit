@@ -14,8 +14,19 @@ public class AddDriver extends Command {
     }
 
     public void handle(Container container) {
-        System.out.println("Add a driver");
-        Driver driver = new Driver("Beland", "Noemie", "1161 chemin du lac-des-piles",2018);
-        container.getCompany().addDriver(driver);
+        try {
+            System.out.println("first name of driver:");
+            String firstName = container.getScanner().nextLine();
+            System.out.println("last name of driver:");
+            String lastName = container.getScanner().nextLine();
+            System.out.println("address of driver:");
+            String address = container.getScanner().nextLine();
+            System.out.println("year of hiring:");
+            int yearHiring = container.getScanner().nextInt();
+            Driver driver = new Driver(lastName, firstName, address, yearHiring);
+            container.getCompany().addDriver(driver);
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
