@@ -1,8 +1,7 @@
 package Commands;
 
 import Console.Command;
-import Models.Driver;
-import Models.Container;
+import Utils.Container;
 
 public class ShowRides  extends Command {
     public String getHelp() {
@@ -13,7 +12,7 @@ public class ShowRides  extends Command {
         return "rides:show";
     }
 
-    public void handle(Container container) {
-        System.out.println(container.getCompany().showAllDrivers());
+    public void handle() {
+        System.out.println(Container.getInstance().getCompany().showAllDrivers());
     }
 }

@@ -1,7 +1,7 @@
 package Commands;
 
 import Console.Command;
-import Models.Container;
+import Utils.Container;
 import Models.Limousine;
 
 public class AddLimousine extends Command {
@@ -13,8 +13,9 @@ public class AddLimousine extends Command {
         return "limousine:add";
     }
 
-    public void handle(Container container) {
+    public void handle() {
         try {
+            Container container = Container.getInstance();
             System.out.println("registration number of the limousine:");
             int registrationNumber = container.getScanner().nextInt();
 

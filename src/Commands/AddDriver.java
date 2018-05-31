@@ -2,7 +2,7 @@ package Commands;
 
 import Console.Command;
 import Models.Driver;
-import Models.Container;
+import Utils.Container;
 
 public class AddDriver extends Command {
     public String getHelp() {
@@ -13,8 +13,9 @@ public class AddDriver extends Command {
         return "driver:add";
     }
 
-    public void handle(Container container) {
+    public void handle() {
         try {
+            Container container = Container.getInstance();
             System.out.println("first name of driver:");
             String firstName = container.getScanner().nextLine();
             System.out.println("last name of driver:");

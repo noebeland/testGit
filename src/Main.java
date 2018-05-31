@@ -5,20 +5,21 @@ import Commands.ShowRides;
 import Console.Kernel;
 import Commands.FindLimousine;
 import Models.Company;
-import Models.Container;
+import Utils.Container;
 
 public class Main {
 
     public static void main(String[] args)
     {
         Company company = new Company();
-        Container container = new Container(company);
+        Container container = Container.getInstance();
+        container.setCompany(company);
 
         //test
 //        Driver d1 = new Driver("Beland", "Noemie", "1161 chemin du lac-des-piles",2018);
 //        System.out.println(d1);
 
-        Kernel kernel = new Kernel(container);
+        Kernel kernel = new Kernel();
         kernel.register(new AddLimousine())
               .register(new FindLimousine())
               .register(new RentLimousine())

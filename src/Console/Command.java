@@ -1,8 +1,8 @@
 package Console;
-import Models.Container;
+import Utils.Container;
 
 public abstract class Command {
     public abstract String getHelp();
-    public abstract void handle(Container container);
+    public abstract void handle();
     public abstract String getSignature();
 }

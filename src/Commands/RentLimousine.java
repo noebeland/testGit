@@ -1,7 +1,7 @@
 package Commands;
 
 import Console.Command;
-import Models.Container;
+import Utils.Container;
 
 public class RentLimousine extends Command {
     public String getHelp() {
@@ -12,7 +12,7 @@ public class RentLimousine extends Command {
         return "limousine:rent";
     }
 
-    public void handle(Container container) {
+    public void handle() {
         System.out.println("Rent a limousine");
     }
 }

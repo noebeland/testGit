@@ -1,11 +1,12 @@
 package Models;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Company
 {
-    ArrayList<Limousine> limousines = new ArrayList<Limousine>();
-    ArrayList<Driver> driverArrayList = new ArrayList<Driver>();
+    List<Limousine> limousines = new ArrayList<>();
+    List<Driver> driverArrayList = new ArrayList<>();
 
     public void addLimousine(Limousine l)
     {
