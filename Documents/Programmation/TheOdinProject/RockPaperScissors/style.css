@@ -1,0 +1,31 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+p{
+    font:bold 30px sans-serif;
+}
+
+button{
+    cursor:pointer;
+    height: 50px;
+    margin: 4px;
+    transition: all 0.03s;
+    width: 50px;
+}
+
+button:hover{transform: scale(1.1);}
+button:active{transform: scale(1);}
+
+button#rock{
+    background:url('images/rock.png') center/contain no-repeat;
+}
+
+button#paper{
+    background:url('images/paper.png') center/contain no-repeat;
+}
+
+button#scissors{
+    background:url('images/scissors.png') center/contain no-repeat;
+}
